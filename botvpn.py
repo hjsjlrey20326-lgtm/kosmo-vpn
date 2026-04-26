@@ -59,13 +59,13 @@ def callback_handler(call):
     user_id = call.from_user.id
     if call.data == "buy_day":
         bot.answer_callback_query(call.id, "Оплата: 3₽")
-        bot.send_message(user_id, "Переведите 3₽ на карту 0000 0000 0000 0000, затем /confirm с фото чека")
+        bot.send_message(user_id, "Переведите 3₽ на карту 2202 2088 0504 7264, затем /confirm с фото чека")
     elif call.data == "buy_month":
         bot.answer_callback_query(call.id, "Оплата: 50₽")
-        bot.send_message(user_id, "Переведите 50₽ на карту ...")
+        bot.send_message(user_id, "Переведите 50₽ на карту 2202 2088 0504 7264")
     elif call.data == "buy_year":
         bot.answer_callback_query(call.id, "Оплата: 500₽")
-        bot.send_message(user_id, "Переведите 500₽ на карту ...")
+        bot.send_message(user_id, "Переведите 500₽ на карту 2202 2088 0504 7264")
     elif call.data == "my_sub":
         users = load_users()
         expires = users.get(str(user_id), {}).get("expires", 0)
