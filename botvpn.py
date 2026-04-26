@@ -9,7 +9,7 @@ from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 # === НАСТРОЙКИ (ЗАПОЛНЕНО) ===
 TOKEN = "8324711865:AAEMB8wDRRciw5pDj9am1KJ69LQy4eRBxhU"           # Замени на токен от @BotFather
 ADMIN_IDS = [8420222491, 8688518887]  # Список админов
-WORKER_URL = "https://modeo-worker.workers.dev/sub"  # Без ?token=
+WORKER_URL = "https://raspy-resonance-c3cf.hjsjlrey20326.workers.dev/"  # Без ?token=
 SECRET_KEY = "ModeoVPN_2026_S3cr3t_K3y_xK9#2mP!qR7@vL8$wN5&tY4"
 PRICE_DAY = 50
 PRICE_MONTH = 300
