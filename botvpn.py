@@ -7,7 +7,7 @@ import hashlib
 from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 # === НАСТРОЙКИ (ЗАПОЛНЕНО) ===
-TOKEN = "YOUR_BOT_TOKEN"           # Замени на токен от @BotFather
+TOKEN = "8756799246:AAFUKXPb-SFoycVdMbLc4E0hbOW_MdC9clE"           # Замени на токен от @BotFather
 ADMIN_IDS = [8420222491, 8688518887]  # Список админов
 WORKER_URL = "https://modeo-worker.workers.dev/sub"  # Без ?token=
 SECRET_KEY = "ModeoVPN_2026_S3cr3t_K3y_xK9#2mP!qR7@vL8$wN5&tY4"
@@ -33,9 +33,9 @@ def generate_token(user_id, days):
 def start(message):
     markup = InlineKeyboardMarkup(row_width=2)
     markup.add(
-        InlineKeyboardButton("📱 День (50₽)", callback_data="day"),
-        InlineKeyboardButton("📱 Месяц (300₽)", callback_data="month"),
-        InlineKeyboardButton("📱 Год (1500₽)", callback_data="year"),
+        InlineKeyboardButton("📱 День (3₽)", callback_data="day"),
+        InlineKeyboardButton("📱 Месяц (50₽)", callback_data="month"),
+        InlineKeyboardButton("📱 Год (500₽)", callback_data="year"),
         InlineKeyboardButton("📋 Моя подписка", callback_data="my"),
         InlineKeyboardButton("❓ Помощь", callback_data="help")
     )
@@ -44,19 +44,19 @@ def start(message):
 @bot.callback_query_handler(func=lambda call: True)
 def callback(call):
     if call.data == "day":
-        bot.answer_callback_query(call.id, "Оплата 50₽")
+        bot.answer_callback_query(call.id, "Оплата 3₽")
         text = (f"Оплатите 50₽ на карту:\n`{CARD_NUMBER}`\n\n"
                 f"После оплаты отправьте скриншот чека сюда или в личку:\n"
                 + ", ".join(SCREENSHOT_USERS))
         bot.send_message(call.message.chat.id, text, parse_mode="Markdown")
     elif call.data == "month":
-        bot.answer_callback_query(call.id, "Оплата 300₽")
+        bot.answer_callback_query(call.id, "Оплата 50₽")
         text = (f"Оплатите 300₽ на карту:\n`{CARD_NUMBER}`\n\n"
                 f"После оплаты отправьте скриншот чека сюда или в личку:\n"
                 + ", ".join(SCREENSHOT_USERS))
         bot.send_message(call.message.chat.id, text, parse_mode="Markdown")
     elif call.data == "year":
-        bot.answer_callback_query(call.id, "Оплата 1500₽")
+        bot.answer_callback_query(call.id, "Оплата 500₽")
         text = (f"Оплатите 1500₽ на карту:\n`{CARD_NUMBER}`\n\n"
                 f"После оплаты отправьте скриншот чека сюда или в личку:\n"
                 + ", ".join(SCREENSHOT_USERS))
